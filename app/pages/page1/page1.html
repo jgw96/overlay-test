@@ -16,9 +16,23 @@
 <ion-content class="page1">
 
   <ion-list>
-    <ion-item (click)="openSheet()" *ngFor="let item of items">
-      {{item.name}}
-    </ion-item>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item (click)="openSheet()">
+        {{item.name}}
+        <p>Cool item</p>
+        <p>Another cool line</p>
+      </ion-item>
+      <ion-item-options>
+        <button primary>
+        <ion-icon name="text"></ion-icon>
+        Text
+      </button>
+        <button secondary>
+        <ion-icon name="call"></ion-icon>
+        Call
+      </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 
   <button (click)="openAlert()" fab fab-bottom fab-right fab-fixed>
